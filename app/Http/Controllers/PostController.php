@@ -96,7 +96,10 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         if($post->delete()){
-            return new PostResource($post);
+            // return new PostResource($post);
+            return response(204, null);
         }
+
     }
+
 }
